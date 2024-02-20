@@ -47,6 +47,7 @@ https://platzi.com/
 ¿Qué es una base de datos relacional? ¿Qué ventajas tiene? ¿Qué elementos la conforman?
 Una base de datos relacional trata de serie de información que los datos vienen con relaciones predefinidas.
 https://cloud.google.com/
+
 __Las ventajas pueden ser:__ Seguridad, una estructura organizada, flexibilidad en consultas y un mantenimiento sencillo
 * __Relación (tabla)__: Trata de una tabla juntar dos tablas al menos entre si ya que tienen datos que las dos pueden compartir.
 * __Atributo/Campo (columna)__: Representa una característica específica y dentro de ella hay datos que concuerda con la característica
