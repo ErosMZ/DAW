@@ -2,12 +2,12 @@
 
 Eros MUñoz Zanón.
 
-Voy a presentaros los principales conceptos de las BD y sus caracteristicas y como funciona el sistema de Cliente-Servidor
+Voy a presentaros los principales conceptos de las BD y sus características y como funciona el sistema de Cliente-Servidor
 ## Concepto y origen de las bases de datos
 ¿Qué son las bases de datos? ¿Qué problemas tratan de resolver? Definición de base de datos.
 
 ## Sistemas de gestión de bases de datos
-__DBMS:__ Es el sistema que se encarga de gestionar las bases de datos, te permite el almacenamiento y la estrucrura del orden de los datos.
+__DBMS:__ Es el sistema que se encarga de gestionar las bases de datos, te permite el almacenamiento y la estructura del orden de los datos.
 
 Las siglas significan "DATABASE MANAGEMENT SYSTEM" que traducido al español sería "SISTEMA DE GESTIÓN DE BASE DE DATOS"
 
@@ -28,7 +28,7 @@ Esa comunicación se consigue mediante una red de intercambio de solicitudes y r
 
 * __Cliente__: Es el hardware que se encarga de mandar una petición al servidor para que el haga una acción.
 * __Servidor__: Es el software/hardware encargado de recibir las peticiones del cliente y las ejecuta.
-* __Red__: Es el encargado de hacer la conexion entre el cliente y el servidor
+* __Red__: Se encarga de hacer la conexión entre el cliente y el servidor
 * __Puerto de escucha__: Lugar donde se conecta la red y consigue que funcione la conectividad
 * __Petición__: Es la acción que le pide el cliente al servidor para que haga.
 * PostgreSQL
