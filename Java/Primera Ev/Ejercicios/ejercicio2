@@ -1,0 +1,21 @@
+nombre Ejercicio2
+
+	Entorno
+		string alumno
+		entero NotaAlumno 
+		entero NOTACORTE: 7
+		string titulación
+
+	ALGORITMO
+		dime el nombre del alumno
+		dime NotaAlumno
+		dime Tiene grado medio, bachiller o prueba de acceso si/no?(titulación)
+		si 
+			titulación=no
+			escribe no puede entrar
+		si no
+			si nota>NotaAlumno
+			escribe No puede entrar
+			si no
+			escribe Puede entrar
+		fin
