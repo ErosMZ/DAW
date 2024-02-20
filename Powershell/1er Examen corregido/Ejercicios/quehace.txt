@@ -1,0 +1,24 @@
+e = Read-Host
+d = Read-Host
+n = Read-Host
+a = Get-ChildItem -Path $d -Recurse -Filter"*$e" -File
+Compress-Archive -Path $a.FullName -DestinationPath $n
+
+¿Qué hace este programa? Soluciona los errores posibles que pueda tener
+
+______________________________________________________
+
+# Solicitar al usuario que ingrese el nombre del archivo ZIP
+$e = Read-Host "Ingrese el nombre del archivo ZIP"
+
+# Solicitar al usuario que ingrese la ruta del directorio de origen
+$d = Read-Host "Ingrese la ruta del directorio de origen"
+
+# Solicitar al usuario que ingrese la ruta y el nombre del archivo ZIP resultante
+$n = Read-Host "Ingrese la ruta y el nombre del archivo ZIP resultante"
+
+# Obtener todos los archivos del directorio de origen y sus subdirectorios que coinciden con el patrón especificado
+$a = Get-ChildItem -Path $d -Recurse -Filter "*$e" -File
+
+# Comprimir los archivos obtenidos en un archivo ZIP en la ubicación especificada
+Compress-Archive -Path $a.FullName -DestinationPath $n
