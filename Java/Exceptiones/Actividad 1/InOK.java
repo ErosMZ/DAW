@@ -1,7 +1,12 @@
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
-public class InOK{
+public class InOK extends ElementoNoExistente{
+
+
+    public InOK(String mensaje) {
+        super(mensaje);
+    }
     private static Scanner sc = new Scanner(System.in);
     
     public static void LeeInt () {
@@ -97,12 +102,34 @@ public class InOK{
             }
         }
     }
-    public static void main(String[] args) {
-        LeeInt();
-        LeeIntPos();
-        LeeIntRango();
-        LeeDou();
-        LeeDouRango();
+    
+    @SuppressWarnings("unlikely-arg-type")
+    public static void ValidaString () throws ElementoNoExistente{
 
+        String String = "";
+        
+        boolean hay = false;
+
+        System.out.print("Dime el nombre: ");
+        String =sc.nextLine();
+        
+
+        for(int a = 0; a < COMPOSITORES.length; a++){
+            if (String.equals(a)) {
+                
+                hay = true;
+                System.out.println("El nombre que proporcionaste esta en la posición " + a);
+            }
+        }
+
+        if (!hay){
+            throw new ElementoNoExistente("Ese elemento no existe");
+        } 
+
+    }
+    public static final String[] COMPOSITORES = {"Bach", "Haydn", "Mozart", "Beethoven", "Brahms", "Mahler", "Bartok"};
+
+    public static void main(String[] args) throws ElementoNoExistente {
+        ValidaString();
     }
 }
