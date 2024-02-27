@@ -115,7 +115,7 @@ public class InOK extends ElementoNoExistente{
         
 
         for(int a = 0; a < COMPOSITORES.length; a++){
-            if (String.equals(a)) {
+            if (String.equals(COMPOSITORES[a])) {
                 
                 hay = true;
                 System.out.println("El nombre que proporcionaste esta en la posición " + a);
@@ -128,8 +128,3 @@ public class InOK extends ElementoNoExistente{
 
     }
     public static final String[] COMPOSITORES = {"Bach", "Haydn", "Mozart", "Beethoven", "Brahms", "Mahler", "Bartok"};
-
-    public static void main(String[] args) throws ElementoNoExistente {
-        ValidaString();
-    }
-}
