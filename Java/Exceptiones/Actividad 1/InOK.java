@@ -51,10 +51,10 @@ public class InOK {
             try{
 
                 int numero = sc.nextInt();
-                if (numero<valorMin && numero>valorMax) throw new Exception();
+                if (numero<valorMin || numero>valorMax) throw new Exception();
     
             }catch(Exception e){
-                System.out.println("Este valor no esta entre "+ valorMin + "y "+ valorMax);
+                System.out.println("Este valor no esta entre "+ valorMin + " y "+ valorMax);
                 sc.nextLine();
             }
         }
@@ -95,10 +95,10 @@ public class InOK {
             try{
 
                 double numero = sc.nextDouble();
-                if (numero<valorMin && numero>valorMax) throw new Exception();
+                if (numero<valorMin || numero>valorMax) throw new Exception();
     
             }catch(Exception e){
-                System.out.println("Este valor no esta entre "+ valorMin + "y "+ valorMax);
+                System.out.println("Este valor no esta entre "+ valorMin + " y "+ valorMax);
                 sc.nextLine();
             }
         }
@@ -130,6 +130,6 @@ public class InOK {
     }
     public static final String[] COMPOSITORES = {"Bach", "Haydn", "Mozart", "Beethoven", "Brahms", "Mahler", "Bartok"};
     public static void main(String[] args) throws ElementoNoExistente {
-    ValidaString();
+    LeeDouRango();
 }
 }
