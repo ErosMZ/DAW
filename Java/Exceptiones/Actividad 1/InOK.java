@@ -1,12 +1,9 @@
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class InOK extends ElementoNoExistente{
+public class InOK {
 
-
-    public InOK(String mensaje) {
-        super(mensaje);
-    }
     private static Scanner sc = new Scanner(System.in);
     
     public static void LeeInt () {
@@ -22,13 +19,17 @@ public class InOK extends ElementoNoExistente{
     public static void LeeIntPos (){
         
         try {
+            
             int paco = sc.nextInt();
             if (paco <= 0) throw new Exception ();
             
 
-        }catch(Exception e){
+        }catch(InputMismatchException a){
+            System.out.println("Caracter no numérico");
+        }
+        catch(Exception e){
             System.out.println("El valor no es positivo");
-            sc.nextLine();
+            
         }
 
     }
@@ -104,7 +105,7 @@ public class InOK extends ElementoNoExistente{
     }
     
     @SuppressWarnings("unlikely-arg-type")
-    public static void ValidaString () throws ElementoNoExistente{
+    public static void ValidaString () throws ElementoNoExistente {
 
         String String = "";
         
@@ -128,3 +129,7 @@ public class InOK extends ElementoNoExistente{
 
     }
     public static final String[] COMPOSITORES = {"Bach", "Haydn", "Mozart", "Beethoven", "Brahms", "Mahler", "Bartok"};
+    public static void main(String[] args) throws ElementoNoExistente {
+    ValidaString();
+}
+}
