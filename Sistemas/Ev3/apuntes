@@ -1,0 +1,31 @@
+Tambien se puede crear un usuario con sudo useradd “nombre Usuario"
+y despues de crearlo poner sudo -passwd “nombre Usuario”
+sudo – nombreUsuario
+bash
+
+______________
+buscar diferencias entre chgrp y chown
+_______
+1. Usuarios y grupos
+	- Entro en el SuperUsuario (sudo su)
+	- Crea un usuario llamado “estudiante1” (adduser estudiante1)
+	- Crea un grupo llamado “clase” (addgroup clase)
+- Añade “estudiante1” al grupo clase (sudo usermod -aG clase estudiante1)
+	
+
+2. Permisos de archivos
+	- Crear un usuario llamado “estudiante2” (adduser estudiante2)
+	- Crear archivo llamado “archivo_clase.txt” (touch archivo_clase.txt)
+	- Cambiar el grupo propietario del archivo a “clase” (sudo chown :clase archivo_clase.txt)
+
+3. Cambiar entre usuarios
+	- Cambia a la cuenta de estudiante2 “su – estudiante2”
+	- Intenta leer “archivo_clase.txt” (Si me deja)
+	-Intenta escribir en el “archivo_clase.txt” (no me deja)
+
+4. Elimina usuarios y grupos
+	- Elimina el usuario “estudiante1” ( sudo pkill -u estudiante1 // sudo userdel -r estudiante1)
+	-Elimina el grupo “clase” (sudo groupdel clase)
+
+El comando ( sudo pkill -u estudiante1 )  borra todos los subprocesos del usuario y después 
+uso el comando userdel para borrarlo.
