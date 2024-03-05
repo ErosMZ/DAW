@@ -1,0 +1,7 @@
+select  CLIENT.Nom , FACTURA.CodiFactura
+from  CLIENT
+JOIN  FACTURA
+ON FACTURA.DNI=CLIENT.DNI
+WHERE CLIENT.Nom LIKE "Maria%";
+
+select * from CLIENT
