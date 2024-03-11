@@ -1,0 +1,40 @@
+git branch -a // ver las ramas ocultas
+git checkout -t origin/antologia // traer una rama oculta
+git log --graph --all --oneline // log de forma épica
+
+Traer una rama a main sin conflicto
+git checkout main
+git merge trilogia_original
+git log
+
+Traer una rama a main con conflicto (con 3 commits)
+git checkout trilogia_precuelas
+git rebase main
+Arreglo conflictos
+git add .
+git rebase --continue
+Arreglo conflictos
+git add .
+git rebase --continue
+Arreglo conflictos
+git add .
+git rebase --continue
+git checkout main
+git merge trilogia_precuelas
+
+
+ejer 2 examen
+git checkout antologia
+git rebase main
+añado de 1 en 1 las peliculas y hago un comit por cada uno
+git reset --soft HEAD~3
+git commit -m "Pelicula1" -m "Pelicula2" -m "Pelicula3"
+git log
+git checkout main 
+git merge antologia
+Creamos token // le das los permisos de repo y los dos ultimos
+git remote add  OriginEros https://github.com/ErosMZ/Marvel.git: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
+git push origin main
+
+ejer 3 examen
+
