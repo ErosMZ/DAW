@@ -1,4 +1,4 @@
-package actividad2;
+
 
 import java.io.Serializable;
 
