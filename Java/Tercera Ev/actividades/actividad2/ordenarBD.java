@@ -1,20 +1,25 @@
-package actividad2;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class ordenarBD {
-    public static void main(String[] args) {
+    public static void main(String[] args){
+
         String linea = "";
         
         try {
 
             File file = new File("SAC_DeepSky_Ver81_QCQ.TXT");
-            FileWriter fw = new FileWriter("Datos.txt");
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
+
+            File fileBin = new File("SAC.bin");
+            FileOutputStream fs = new FileOutputStream(fileBin);
+            ObjectOutputStream oos = new ObjectOutputStream(fs);
 
             linea = br.readLine();
             
@@ -29,30 +34,26 @@ public class ordenarBD {
                 String columDEC= columnas[5].replace("\"", "").replace(" ", "");
                 String columMAG= columnas[6].replace("\"", "").replace(" ", "");
                 
-                
                if (columGLX.equals("GALXY")) {
-                
-                    Galaxia glx = new Galaxia(columOBJ, columCONST, columRECTA, columDEC, columMAG);
 
-                    
-                    
-                    fw.write(glx.toString());
-                    
-                        
-                    
-                    
+                    Galaxia glx = new Galaxia(columOBJ, columCONST, columRECTA, columDEC, columMAG);
+                    oos.writeObject(glx.toString());
+                   
+
                 }
-                
                 linea = br.readLine();
-              
             }
-            fw.close();
+
+            oos.close();
             br.close();
             fr.close();
-        } catch (Exception e) {
-            System.out.println("ERRORRRRRRRRRRRRRRRRRRRR");
+        } catch (IOException e) {
+
+            System.out.println("No existe el fichero");
             e.printStackTrace();
 
+        }catch(NoClassDefFoundError e){
+            System.out.println("jdgfg");
         }
     }
 }
