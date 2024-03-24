@@ -1,1 +1,17 @@
+que hace el sort -n: Ordena las filas de una matriz o rango dados según los valores de una o más columnas.
 
+
+sort -t',' -k2 usuarios.cvs | head -n 2
+
+Con el sort separa por ,
+Con el k2 selecciona la columna 2
+Y con el head -n 2 imprime solamente 2 columnas 
+
+Con el cut -d corta a partir de :
+Con el -f4 selecciona la columna 4 de la ruta /etc/passwd
+Con el sort -n ordena los numeros de la ruta
+uniq -c cuenta todas las veces que se repite el numero ponienmdolo delente ejm:
+2 1000
+5 65534
+Y por ultimo el sort -nr ordena de mayor a menor (Si no pusieras nada lo pondria de menor a mayor)
+cut -d ":" -f4 /etc/passwd | sort -n | uniq -c | sort -nr
