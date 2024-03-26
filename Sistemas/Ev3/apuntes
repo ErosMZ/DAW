@@ -15,3 +15,17 @@ uniq -c cuenta todas las veces que se repite el numero ponienmdolo delente ejm:
 5 65534
 Y por ultimo el sort -nr ordena de mayor a menor (Si no pusieras nada lo pondria de menor a mayor)
 cut -d ":" -f4 /etc/passwd | sort -n | uniq -c | sort -nr
+
+
+0 = --- = sin acceso
+1 = --x = ejecución
+2 = -w- = escritura
+3 = -wx = escritura y ejecución
+4 = r-- = lectura
+5 = r-x = lectura y ejecución
+6 = rw- = lectura y escritura
+7 = rwx = lectura, escritura y ejecución
+
+chmod a+wrx "Fichero"
+
+chmod u-w,g-w,g-r "Fichero"
