@@ -29,3 +29,10 @@ cut -d ":" -f4 /etc/passwd | sort -n | uniq -c | sort -nr
 chmod a+wrx "Fichero"
 
 chmod u-w,g-w,g-r "Fichero"
+
+ruta users = /etc/passwd
+ruta grupos = /etc/group
+
+animales[0]=perro
+animales[1]=gato
+primo[2]=5
