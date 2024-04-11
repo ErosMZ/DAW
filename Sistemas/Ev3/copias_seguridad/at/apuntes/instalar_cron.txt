@@ -1,0 +1,20 @@
+sudo apt install cron
+crontab -e (y eliges el editor que quieres "el primero es el nano")
+
+
+
+# ┌──────────── minute (0 - 59)
+ # │ ┌────────── hour (0 - 23)
+ # │ │ ┌──────── day of month (1 -31)
+ # │ │ │ ┌────── month (1 - 12)
+ # │ │ │ │ ┌──── day of week (1 -7)
+ # │ │ │ │ │
+ # │ │ │ │ │
+ # * * * * *
+#EJERCICIOS
+
+# * * * * * echo 'Hello' >> /tmp/test.txt
+
+
+de lunes a viernes cada 30 minutos de 9am-5-pms
+ */30 9-17 * * 1-5
