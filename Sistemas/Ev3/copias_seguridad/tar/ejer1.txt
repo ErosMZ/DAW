@@ -1,0 +1,1 @@
+tar cvf /home/eros/Escritorio/copias_seguridad/tar/ejer1/Copiatotal_etc-home_`date +%d-%b-%y`.tar /home /etc
