@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias con diseño fijo</title>
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+
+        .sidebar {
+            margin-top: 100px;
+            float: left;
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+       
+        .noticias-container {
+            margin-left: 20%;
+            padding: 10px;
+            overflow-y: auto; 
+            height: calc(100vh - 80px); 
+            
+        }
+
+        .noticia {
+            margin-top: 100px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #936b6b, #f2f2f2);
+        }
+
+        .noticia .tooltip h2 {
+            text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+            cursor:  pointer;
+        }
+        .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Noticias</h1>
+    </div>
+
+    <div class="sidebar">
+        <h2>Botonera</h2>
+        <ul>
+            <li><a href="#">Categoría 1</a></li>
+            <li><a href="#">Categoría 2</a></li>
+            <li><a href="#">Categoría 3</a></li>
+            <li><a href="#">Categoría 4</a></li>
+        </ul>
+    </div>
+
+    <div class="noticias-container">
+        <div class="noticia">
+
+            <div class="noticia clearfix">
+                <img src="fondoDeNoticia.jpg" alt="Borrador" class="marca-de-agua">
+                <div class="tooltip">
+                    <br>
+                    <h2>Noticia 1</h2>
+                    <span class="tooltiptext">Yolanda Rojas</span>
+                </div>
+                <p>
+                    <div id="ContenedorJefe">
+                        <p id="texto">Trato de escribir sin tildes en ordenador prestado
+                            El invierno ya se ha ido, hay primavera en el monte...
+                            De frente espera la vida y preguntas a granel
+                            Feliz de hallar mis poetas
+                            Pobre cosecha en el silo...
+                        </p>
+                        <p id="texto">
+                            Nada en mi vida es inerme, hay grandes logros y lutos
+                            Caleidoscopio y paisaje de colores contrastantes
+                            Meses vividos con garra
+                            Grandes regalos de vida...
+                        </p>
+                        <p id="texto">
+                            No quiero prisa sin pausa, tampoco esquiva quimera
+                            Renuncio a expresar conceptos que la vida no construyen
+                            La verdad va a ser mi escudo
+                            Tildes y acentos esperan...
+                        </p>
+                        <p id="texto"><b>By Yolanda Rojas</b></p>
+                        <p id="texto"><a href="noticiasIndice.html"><center>Índice</center></a></p>
+                    </div>
+                </p>
+            </div>
+        </div>
+        <div class="noticia">
+            <div class="noticia clearfix">
+                <img src="fondoDeNoticia.jpg" alt="Borrador" class="marca-de-agua imagen">
+                <h2>Noticia 2</h2>
+                <p>
+                    <header><b>Muere a los 60 años el periodista, escritor y consultor de medios Mario Tascón</header>
+                    <div id="ContenedorJefe">
+                        <p id="texto"><i>El periodista, escritor y consultor de medios de comunicación, Mario Tascón ha fallecido en Buenos Aires a los 60 años de edad, según ha confirmado la consultora Prodigioso Volcán, de la que fue socio fundador.</i></p>
+                        <i>Tascón falleció a consecuencia de un accidente cardiovascular este jueves 28 de septiembre en Buenos Aires, ciudad a la que había viajado para participar en una serie de encuentros con periodistas, según ha informado la Fundación Gabo que ha lamentado en su página web el fallecimiento del periodista que el día de su muerte había participado en una charla sobre oportunidades y desafíos de la inteligencia artificial organizada por la entidad.</i>
+                        <p id="texto"><mark> − 2x − 6x + 3x = 24 − 12 − 2 </mark></p> 
+                        <p id="texto">10<sup>2</sup></mark></p>
+                        <p id="texto"><a href="noticiasIndice.html"><center>Índice</center></a></p>
+                    </div>
+                </p>
+            </div>
+        </div>
+    
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Noticias.com</p>
+    </div>
+</body>
+</html>
