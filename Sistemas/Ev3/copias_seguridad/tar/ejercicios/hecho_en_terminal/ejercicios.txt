@@ -1,0 +1,31 @@
+ejer 1
+eros@eros-VirtualBox:~/Escritorio/copias_seguridad/ejercicios$ at now + 5 minutes
+warning: commands will be executed using /bin/sh
+at Tue Apr  9 16:24:00 2024
+at> touch $HOME./test.txt
+at> <EOT>
+job 10 at Tue Apr  9 16:24:00 2024
+
+echo "touch $HOME/test.txt" | at now + 10 minutes
+
+ejer 2
+
+eros@eros-VirtualBox:~/Escritorio/copias_seguridad/ejercicios$ at 2:30
+warning: commands will be executed using /bin/sh
+at Wed Apr 10 02:30:00 2024
+at> df -h
+at> <EOT>
+job 11 at Wed Apr 10 02:30:00 2024
+
+echo "df -h >> discos.txt" | at 2:30
+
+ejer 3
+
+eros@eros-VirtualBox:~/Escritorio/copias_seguridad/ejercicios$ at now + 20 minutes
+warning: commands will be executed using /bin/sh
+at Tue Apr  9 16:45:00 2024
+at> ps
+at> <EOT>
+job 12 at Tue Apr  9 16:45:00 2024
+
+echo "ps > ps.txt" | at now + 20 minutes
