@@ -1,6 +1,6 @@
 He hecho dos copias de seguridad incrementales y despues las he extraido
 
-
+sudo chown eros:eros /COPIAS/
 tar cv -g ./lista-incre.file -f increm.tar /COPIAS/
 touch /COPIAS/EJERCICIOS/ejer3.txt
 tar cv -g ./lista-incre.file -f increm2.tar /COPIAS/
