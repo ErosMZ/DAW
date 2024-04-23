@@ -1,0 +1,5 @@
+adduser joan
+adduser carles
+
+El cron es:
+*/10 16 * * 1,3,5  /home/carles/crontab1.sh
