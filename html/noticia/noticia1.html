@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
     <title>Noticias con diseño fijo</title>
     <style>
         .header {
@@ -13,7 +14,7 @@
             color: #fff;
             padding: 10px;
         }
-
+        
         .footer {
             position: fixed;
             bottom: 0;
@@ -100,6 +101,12 @@
   visibility: visible;
   opacity: 1;
 }
+iframe {
+  border: 1px solid black;
+  width: 100%; 
+  margin-bottom: 25px;
+}
+
     </style>
 </head>
 <body>
@@ -158,7 +165,7 @@
                 <img src="fondoDeNoticia.jpg" alt="Borrador" class="marca-de-agua imagen">
                 <h2>Noticia 2</h2>
                 <p>
-                    <header><b>Muere a los 60 años el periodista, escritor y consultor de medios Mario Tascón</header>
+                    <div style="font-family: 'Tangerine', serif;">Muere a los 60 años el periodista, escritor y consultor de medios Mario Tascón</div>
                     <div id="ContenedorJefe">
                         <p id="texto"><i>El periodista, escritor y consultor de medios de comunicación, Mario Tascón ha fallecido en Buenos Aires a los 60 años de edad, según ha confirmado la consultora Prodigioso Volcán, de la que fue socio fundador.</i></p>
                         <i>Tascón falleció a consecuencia de un accidente cardiovascular este jueves 28 de septiembre en Buenos Aires, ciudad a la que había viajado para participar en una serie de encuentros con periodistas, según ha informado la Fundación Gabo que ha lamentado en su página web el fallecimiento del periodista que el día de su muerte había participado en una charla sobre oportunidades y desafíos de la inteligencia artificial organizada por la entidad.</i>
@@ -169,7 +176,25 @@
                 </p>
             </div>
         </div>
-    
+        
+
+                <div class="iframe_eros">
+                    <iframe
+                        id="Marca"
+                        title="Marca"
+                        width="750px"
+                        height="750px"
+                        src="https://www.marca.com/">
+                    </iframe>
+                </div>
+                <iframe
+                    id="inlineFrameExample"
+                    title="Inline Frame Example"
+                    width="500px"
+                    height="500px"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+                </iframe>
+            
     </div>
     <div class="footer">
         <p>&copy; 2024 Noticias.com</p>
