@@ -1,0 +1,5 @@
+ejemplo:
+
+sudo mkdir /BACKUPS
+
+sudo chown eros:eros /CBACKUPS
