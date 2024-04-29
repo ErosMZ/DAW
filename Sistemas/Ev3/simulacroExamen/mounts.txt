@@ -1,3 +1,6 @@
+se usa la aplicacion Gparted
+
+
 sudo mount -t ext4 /dev/sdb2 /NOTICIAS/particionNoticias/
  sudo mount -t ext4 /dev/sdb4 /BACKUPS/
 
