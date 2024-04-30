@@ -1,0 +1,11 @@
+#!/bin/bash
+#mes en numero
+mes=$(date +"%m")
+while IFS="$" read id fecha titulo autor texto
+do
+
+	palabras=$(echo $texto | wc -w)
+	echo "$autor,$titulo,$palabras" >/NOTICIAS/palabras-$mes.txt
+
+done < /NOTICIAS/noticia1
+
