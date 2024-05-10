@@ -1,0 +1,119 @@
+body{
+    margin: 0px;
+    background-color: red;
+}
+
+#tabla1 {
+    margin-left: 35%;
+    float: left;
+    margin-top: 30px;
+}
+
+#tabla1 table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+#tabla1 table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tabla1 table th, #tabla1 table td {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: left;
+}
+
+
+#ContenedorJefe{    
+    float: left;
+    margin-top: 0px;
+    height: 500px;
+    width: 100%;
+    background-color: red;
+}
+#texto{
+    text-align:center;
+    font-size:15px;
+    color:rgb(0, 0, 0);
+    font-family:Cursive, Zapf-Chancery;
+}
+header {
+    background: linear-gradient(to right, #4CAF50, #2196F3);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#imagenIndice{
+    float: right;
+    margin-right: 30%;
+    margin-top: 3%;
+    border:black 5px solid;
+}
+#contenedorizq{
+    margin-left: 2%;
+    text-indent: 5px;
+    line-height: 3px;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1;
+    margin-top:8%;
+    height: 300px;
+    width: 10%;
+    border-radius: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}  
+    #TituloContenedorIzq{
+        height: 10px;
+        width: 100%;
+        float: left;
+        margin-top: 40%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    #Final {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: bisque;
+        text-align: center;
+        padding: 10px;
+    }
+#header{
+    background: linear-gradient(to right, #4CAF50, #2196F3);
+    color: white;
+            padding: 10px 0;
+            text-align: center;
+}
+nav {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    float: left;
+    clear: both;
+    margin-top: 20px;
+}
+
+#navbarTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#navbarTable td {
+    padding: 15px; /* Adjust the padding as needed */
+    margin-right: 10px; /* Add spacing between buttons */
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid white;
+}
+
+#navbarTable a {
+    text-decoration: none;
+    color: white;
+}
+td:nth-child(even), th:nth-child(even) {
+    background-color: #D6EEEE;
+  }
