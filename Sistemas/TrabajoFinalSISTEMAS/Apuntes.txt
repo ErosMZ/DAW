@@ -1,0 +1,79 @@
+DATO IMPORTANTEEEE
+
+para poder hacer instalaciones tienes que ir al fichero /etc/apt/sources.list.d/ubuntu.sources
+y ahi la primera linea cambiarla por https://ubuntu.cica.es/ubuntu/
+
+
+editamos el /etc/netplan/50-cloud-init.yaml
+	- Para cambiar la ip
+
+editamos el fichero /etc/apache2/sites-available/000-default.com
+-- Y en DocumentRoot  Ponemos la ruta que queramos dejar nuestra pagina web en mi caso he puesto /WEB/www.ermuza.test
+Y ponemos el comando de sudo systemctl restart apache2 // para aceptar los cambios
+
+-- adjunto captura 1
+Ya que no tengo permisos para entrar
+en la ruta /etc/apache2/apache2.conf
+
+añado esto :
+	<Directory "Ruta del servidor">
+    		Options FollowSymLinks
+    		AllowOverride None
+    		Require all granted
+	</Directory>
+
+
+Comandos importantes:
+	sudo systemctl status apache2.service // para ver el estado del servidor
+	systemctl restart apache2 // para restablecer los cambios del servidor
+
+
+--------
+
+Cambios a dns
+en la ruta /etc/apache2/sites-availables
+he creado un fichero de configuracion que en mi caso se llama www.ermuza.test.conf
+en el he añadido un ServerName
+El ServerAdmin que ya viene
+Y el DocumentRoot he puesto la ruta que quiero que se muestre al entrar al servidor mediantes un buscador
+
+He aceptado los cambios con el comando sudo a2ensite www.ermuza.test.conf
+
+
+en el fichero /etc/apache2/apache.conf esto
+	<Directory "Ruta del servidor">
+    		Options FollowSymLinks
+    		AllowOverride None
+    		Require all granted
+	</Directory>
+
+y he reiniciado el server con el comando systemctl restart apache2
+
+Despues en la maquina virtual CLIENTE1 he ido a la ruta /etc/host y he puesto esta linea 192.168.5.52 	www.ermuza.test
+
+he probado a hacer un ping de www.ermuza.test y funciona correctamente
+y al buscar en un navegador en dns www.ermuza.test funciona correctamente
+
+
+--- VSFTPD
+
+he hecho un sudo apt intall vsftpd
+
+y en la maquina virtual he puesto en el comando ftp y la ip me he logueado y ya he conseguido estar dentro
+-- adjunto captura 2
+
+
+PARA ENJAULAR AL UN USUARIO 
+en el fichero /etc/passwd
+en la linia q pone webcontent le pongo la ruta que quiero que sea el home 
+
+
+INSTALACION DNS
+LOS COMANDOS PRINCIPALES SON sudo apt install bind9 // sudo apt install dnsutils
+Los primeros cambios son en el fichero /etc/bind/named.conf.local tienes que poner algo similar a esto sustituyendi los examples
+zone "example.com" {
+    type master;
+    file "/etc/bind/db.example.com";
+};
+
+
