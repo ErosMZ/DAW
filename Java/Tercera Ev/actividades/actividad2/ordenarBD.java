@@ -12,11 +12,12 @@ public class ordenarBD {
         String linea = "";
         
         try {
-
+            // lectura
             File file = new File("SAC_DeepSky_Ver81_QCQ.TXT");
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
 
+            // escritura
             File fileBin = new File("SAC.bin");
             FileOutputStream fs = new FileOutputStream(fileBin);
             ObjectOutputStream oos = new ObjectOutputStream(fs);
