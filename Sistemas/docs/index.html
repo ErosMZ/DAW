@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCS EROS</title>
+    
+    <style>
+        body{
+            background-color: bisque;
+            margin: 0px;
+            padding: 0px;
+        }
+        #text{
+            margin-top: 2%;
+            height: 10%;
+            width: 100%;
+            float: left;
+        }
+        #header{
+            margin-top: 0px;
+            height: 10%;
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+        }
+        #header1{
+            float: left;
+            margin-top: 3%;
+            height: 10%;
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+        }
+
+        #texto1{
+            margin-top: 5%;
+            float: right;
+            margin-right: 4%;
+            background-color: antiquewhite ;
+            border-radius: 3%;
+            border: 2px solid;
+            border-color: darkseagreen;
+        }
+        #texto2{
+            margin-top: 5%;
+            float: left;
+            margin-left: 4%;
+            background-color: antiquewhite ;
+            border-radius: 3%;
+            border: 2px solid;
+            border-color: darkseagreen;
+        }
+        #texto3{
+            margin-top: 5%;
+            float: right;
+            margin-left: 5%;
+            margin-right: 5%;
+            background-color: antiquewhite ;
+            border-radius: 3%;
+            border: 2px solid;
+            border-color: darkseagreen;
+            width: 90%;
+        }
+        #texto4{
+            font-size: 20px;
+            margin-top: 5%;
+            float: left;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            background-color: antiquewhite ;
+            border-radius: 3%;
+            border: 2px solid;
+            border-color: darkseagreen;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <H1>INSTALACIÓN DEL SERVIDOR</H1>
+    </div>
+    <center>
+    <p>Comandos importantes:</p>
+    <P>sudo apt install apache2 // instalar el servidor de apache</P>
+	<p>sudo systemctl status apache2.service // para ver el estado del servidor</p>
+	<p>systemctl restart apache2 // para restablecer los cambios del servidor</p>
+    
+    </center>
+        <div id="texto4">
+            <P>1- Lo primero que tenemos que hacer conseguir que podemamos hacer instalaciones.</P>
+            <br>
+            <p>Para ello nos vamos al fichero <b>/etc/apt/sources.list.d/ubuntu.sources</b></p>
+            <p>Y cambiamos la primera linea cambiarla por <b>https://ubuntu.cica.es/ubuntu/</b></p>
+            <center><img src="ubuntu.png" alt=""></a></center>
+        </div>
+    
+    <div id="texto4">
+        <p>2- Editamos el <b>/etc/netplan/50-cloud-init.yaml</b></p>
+        <br>
+        <p>Este fichero consiste es nombrar la ip de nuestro servidor la máscara de red el localhost etc.</p>
+        <p><b>sudo netplan apply: </b>para aplicar los cambios.</p>
+        <center><img src="netplan.png" alt=""></a></center>
+    </div>
+    <center>
+    <div id="texto3">
+        <P>3- En la carpeta <b>/etc/apache2/sites-available</b>.</P>
+        <br>
+        <p>Copio el 000-default.conf a docs.ermuza.test.conf y a www.ermuza.test.conf</p>
+        <P>En la variable <b>DocumentRoot</b> ponemos la ruta que queramos dejar nuestra pagina web en mi caso he puesto /WEB/www.ermuza.test</P>
+        <p>En la variable <b>ServerName</b> he puesto la url con la que quiero que se busque mi servidor</p>
+        <p><b>sudo systemctl restart apache2: </b>para reiniciar el servidor de apache y aplicar cambios.</p>
+        <img src="www.conf.png" alt=""></a>
+        <img src="docs.png" alt=""></a>
+    </div>
+    
+    <div id="texto4">
+        <center><h3>NO TENGO PERMISOS PARA ENTRAR</h3></center>
+        <center><img src="captura1.png" alt=""></a></center>
+        <p>En el fichero /etc/apache2/apache.conf esto por cada web cambiandole la ruta</p>
+            <pre><code>
+                &lt;Directory "Ruta del servidor"&gt;
+                Options FollowSymLinks
+                AllowOverride None
+                Require all granted
+            &lt;/Directory&gt;
+            </Directory>
+        </code></pre>
+        <img src="sinPermisos.png" alt="20" style="height: 50%;"></a>
+        <p>Reinicio el server con el comando systemctl restart apache2 </p>
+
+        <b>Comprobaciones</b>
+        <p>Despues en la maquina virtual CLIENTE1 he ido a la ruta /etc/host y he puesto esta linea 192.168.5.52 	www.ermuza.test</p>
+        <p>He probado a hacer un ping de www.ermuza.test y funciona correctamente</p>
+        <p>Y al buscar en un navegador en dns www.ermuza.test funciona correctamente</p>
+    </div>
+
+    <div id="header1">
+        <H1>INSTALACIÓN DNS</H1>
+    </div>
+    <div id="text">
+        <CENter>
+            <p>Comandos instalación:</p>
+            <p>sudo apt install bind9 // instlación del bind9</p>
+            <p>sudo apt install dnsutils // instalación de los dnsutils</p>
+        </CENter>
+    </div>
+    <div id="texto4">
+        <p>1- Cambios son en el fichero <b>/etc/bind/named.conf.local</b></p>
+        <img src="named.png" alt="40"></a>
+        <p>Arriba el dominio</p>
+        <p>Abajo se pone la ruta donde tienes la carpeta del servidor</p>
+        <p>Y ejecutamos <b>sudo systemctl restart bind9</b></p>
+    </div>
+
+        
+
+    <div id="texto4">
+
+        <p>He hecho copiado el db que viene por defecto y lo he pasado a <b>db.ermuza.test</b> que tiene que coincidir con la ruta que hemos puesto en el fichero anterior</p>
+        <p>He he hecho varios cambios</p>
+        <img src="db.png" alt=""></a>
+        <p>Después de estos cambios ejecuto el siguiente comando: <b>sudo systemctl restart bind9</b></p>
+
+
+    </div>
+
+    <div id="header1">
+        <H1>FTP</H1>
+    </div>
+    <div id="text">
+        <CENter>
+            <p>Comando de instalación:</p>
+            <p>sudo apt intall vsftpd // para instalar el ftp</p>
+            
+        </CENter>
+    </div>
+    <div id="texto4">
+            <h3>¿COMO FUNCIONA FTP?</h3>
+            <p><b>Comando:</b> sudo ftp "ip del servidor"</p>
+            <p><img src="captura2.png" alt=""></a></p>
+            <b>También se puede utilizar el filezilla</b>
+            
+            <p>Instalar filezilla</p>
+            <p><b>Comando: </b> sudo apt install filezilla</p>
+            <p><img src="filezilla.png" height="40%" width="80%"></a></p>
+
+
+        
+    </div>
+        <div id="texto4">
+            <h3>ENJAULAR UN USUARIO</h3>
+            <p><b>Ruta: </b>/etc/passwd</p>
+            <p>En la linea que pone <b>webcontent</b> pongo la ruta que quiera.</p>
+            <p><img src="enjaular.png" height="40%" width="80%"></a></p>
+    </div>
+</body>
+</html>
