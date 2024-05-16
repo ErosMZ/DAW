@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de Base de Datos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .code-block {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            transition: background-color 0.3s ease;
+        }
+        .code-block:hover {
+            background-color: #3e3d32;
+        }
+        .highlight {
+            color: #f39c12;
+            transition: color 0.3s ease;
+        }
+        .highlight:hover {
+            color: #e67e22;
+        }
+        .explanation:hover {
+            background-color: #f9f9f9;
+            border-left: 5px solid #0073b1;
+            padding-left: 10px;
+            transition: background-color 0.3s ease, border-left 0.3s ease, padding-left 0.3s ease;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f39c12;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .back-button:hover {
+            background-color: #e67e22;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Creación de Base de Datos</h1>
+    <p class="explanation">A continuación, se muestra un ejemplo de cómo crear una base de datos y tablas en SQL, con explicaciones detalladas sobre cada paso.</p>
+
+    <h2 class="highlight">Código SQL:</h2>
+    <div class="code-block">
+        <pre>
+-- Crear una nueva base de datos
+CREATE DATABASE <span class="highlight">MiBaseDeDatos</span>;
+USE <span class="highlight">MiBaseDeDatos</span>;
+
+-- Crear una tabla para usuarios
+CREATE TABLE <span class="highlight">Usuarios</span> (
+    <span class="highlight">ID</span> INT AUTO_INCREMENT PRIMARY KEY,
+    <span class="highlight">Nombre</span> VARCHAR(100) NOT NULL,
+    <span class="highlight">Email</span> VARCHAR(100) UNIQUE NOT NULL,
+    <span class="highlight">FechaRegistro</span> TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Crear una tabla para pedidos
+CREATE TABLE <span class="highlight">Pedidos</span> (
+    <span class="highlight">PedidoID</span> INT AUTO_INCREMENT PRIMARY KEY,
+    <span class="highlight">UsuarioID</span> INT,
+    <span class="highlight">FechaPedido</span> TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    <span class="highlight">MontoTotal</span> DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (<span class="highlight">UsuarioID</span>) REFERENCES <span class="highlight">Usuarios</span>(<span class="highlight">ID</span>)
+);
+        </pre>
+    </div>
+
+    <p class="explanation"><span class="highlight">CREATE DATABASE</span> se utiliza para crear una nueva base de datos llamada <span class="highlight">MiBaseDeDatos</span>. Luego, <span class="highlight">USE</span> selecciona esa base de datos para realizar las operaciones posteriores.</p>
+    <p class="explanation">La tabla <span class="highlight">Usuarios</span> almacena información sobre los usuarios. Cada usuario tiene un <span class="highlight">ID</span> único, un <span class="highlight">Nombre</span>, un <span class="highlight">Email</span> único, y la fecha en que se registró (<span class="highlight">FechaRegistro</span>).</p>
+    <p class="explanation">La tabla <span class="highlight">Pedidos</span> almacena información sobre los pedidos. Cada pedido tiene un <span class="highlight">PedidoID</span> único, un <span class="highlight">UsuarioID</span> que referencia al usuario que realizó el pedido, la <span class="highlight">FechaPedido</span>, y el <span class="highlight">MontoTotal</span> del pedido. El <span class="highlight">UsuarioID</span> es una clave foránea que referencia el <span class="highlight">ID</span> de la tabla <span class="highlight">Usuarios</span>.</p>
+
+    <a href="index.html" class="back-button">Volver</a>
+</div>
+
+</body>
+</html>

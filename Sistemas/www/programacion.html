@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrer un Array en JavaScript</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #0073e6;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #0073e6;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .code-block {
+            background-color: #e6f0ff;
+            color: #002b80;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            border-left: 5px solid #0073e6;
+            margin: 20px 0;
+        }
+        .code-block:hover {
+            background-color: #d1e7ff;
+        }
+        .highlight {
+            color: #d9534f;
+        }
+        .explanation {
+            background-color: #e6f0ff;
+            border-left: 5px solid #0073e6;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: background-color 0.3s ease, border-left 0.3s ease;
+        }
+        .explanation:hover {
+            background-color: #d1e7ff;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        .back-button:hover {
+            background-color: #005bb5;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Recorrer un Array en JavaScript</h1>
+    <p class="explanation">A continuación, se muestra un ejemplo de cómo recorrer un array utilizando un bucle <span class="highlight">for</span> en JavaScript. Este método es una forma sencilla y eficiente de iterar sobre los elementos de un array.</p>
+
+    <h2 class="highlight">Código JavaScript:</h2>
+    <div class="code-block">
+        <pre>
+<span class="highlight">// Definir un array de ejemplo</span>
+let <span class="highlight">miArray</span> = [1, 2, 3, 4, 5];
+
+<span class="highlight">// Usar un bucle for para recorrer el array</span>
+for (let <span class="highlight">i</span> = 0; <span class="highlight">i</span> &lt; <span class="highlight">miArray</span>.length; <span class="highlight">i</span>++) {
+    console.log(<span class="highlight">miArray[i]</span>);
+}
+        </pre>
+    </div>
+
+    <p class="explanation"><span class="highlight">// Definir un array de ejemplo</span>: Aquí se define un array llamado <span class="highlight">miArray</span> con cinco elementos.</p>
+    <p class="explanation"><span class="highlight">// Usar un bucle for para recorrer el array</span>: Este bucle <span class="highlight">for</span> inicia con <span class="highlight">i</span> igual a 0 y se ejecuta mientras <span class="highlight">i</span> sea menor que la longitud del array. En cada iteración, el elemento en la posición <span class="highlight">i</span> del array se imprime en la consola.</p>
+
+    <a href="index.html" class="back-button">Volver</a>
+</div>
+
+</body>
+</html>
